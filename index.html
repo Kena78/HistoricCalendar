@@ -1,0 +1,1392 @@
+
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style>
+        .collapse_button_title {
+  color: darkred;
+  padding: 4px;
+  border: 4px solid transparent;
+  display: block;
+  /*noinspection CssOverwrittenProperties*/
+  width: 100%;
+  /*noinspection CssOverwrittenProperties*/
+  width: calc(100% - 16px);
+  cursor: pointer;
+}
+
+.active, .collapse_button_title:hover {
+  border-color: transparent;
+  background: #f1f1f1;
+}
+
+.collapse_button {
+  display: none;
+}
+
+.collapsable > p {
+  height: 100%;
+  margin: 0;
+  padding: 8px 32px;
+}
+
+.collapsable {
+  width: 100%;
+  box-sizing: border-box;
+  background: #73B6BC;
+  color: white;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.2s ease;
+}
+
+body {
+  background: #7a2525;
+  height: 100%;
+}
+
+.main_container {
+  width: min(100%, 512px);
+  margin: auto;
+  background: white;
+  height: fit-content;
+}
+
+.main_header {
+  text-align: center;
+  color: lightcoral;
+  font-size: 3em;
+}
+
+.period_table {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.period_table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.period_table > .row {
+  display: flex;
+  position: relative;
+}
+
+.period_table > .row > div:first-child {
+  vertical-align: top;
+}
+
+.row + .row {
+  margin-top: 4px;
+}
+
+.row + .row::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  z-index: 3;
+}
+
+.period_table > .row > div:first-child > p {
+  width: 100%;
+  color: darkred;
+  padding: 4px;
+  border: 4px solid transparent;
+  margin: 0;
+  height: fit-content;
+  background: #f1f1f1;
+}
+
+.period_table > .row > div:first-child {
+  flex: 1;
+}
+
+
+.period_table > .row > div:first-child:not(.active) + div > * {
+  color: transparent;
+  background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0)); /* Градиент от белого к прозрачному */
+  height: 100%;
+  display: block;
+  -webkit-background-clip: text; /* Применение фона к тексту */
+}
+
+.period_table > .row > .active:first-child + div > * {
+  color: transparent;
+  background: white; /* Градиент от белого к прозрачному */
+  height: 100%;
+  display: block;
+  -webkit-background-clip: text; /* Применение фона к тексту */
+}
+
+.period_table > .row > div:last-child {
+  flex: 3;
+  box-sizing: border-box;
+  background: #73B6BC;
+  color: white;
+  overflow: hidden;
+  height: max-content;
+}
+.period_table > .row > div:first-child:hover, .period_table > .row > .active:first-child{
+  border-color: transparent;
+  background: #f1f1f1;
+}
+
+.period_table > .row > div:last-child > div > img {
+  padding: 4px;
+  max-width: 100%; /* Максимальная ширина равна ширине родительского элемента */
+  height: auto; /* Сохранение соотношения сторон */
+  display: block; /* Убирает пробелы вокруг изображения, если они есть */
+  box-sizing: border-box;
+  margin: 0 auto; /* Центрирование изображения внутри родительского элемента */
+
+}
+
+    </style>
+
+    <meta name="description" content="">
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<p class="main_header">Исторический календарь</p>
+<div class="main_container">
+    
+
+<label class="collapse_button_title" for="period0">Первый период(сентябрь 1939 - июнь 1941)</label>
+<input class="collapse_button period" type="checkbox" id="period0">
+<div class="collapsable" style="background: transparent;padding-left: 8px;
+  transition: max-height 0s ease;">
+    <div class="period_table">
+        <div class="row">
+    <div>
+        <p>1939-09-01</p>
+    </div>
+    <div>
+        <div>Нападение Германии на Польшу. Италия объявляет себя в состоянии «не ведения войны». Великобритания и Франция требуют прекращения военных действий и отвода немецких войск из Польши. На внеочередной Четвёртой сессии Верховного Совета СССР принят Закон о всеобщей воинской обязанности.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Polish_infantry_marching_-2_1939.jpg/369px-Polish_infantry_marching_-2_1939.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-03</p>
+    </div>
+    <div>
+        <div>Великобритания и Франция объявляют Германии войну. Объявление Австралией, Новой Зеландией и Индией войны Германии. С этого времени до 10 мая 1940 года происходит так называемая «Странная война».
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-04</p>
+    </div>
+    <div>
+        <div>Постановление СНК СССР «О развитии танкостроительной промышленности СССР».</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-04</p>
+    </div>
+    <div>
+        <div>Заявление японского правительства о невмешательстве Японии в европейскую войну.</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-05</p>
+    </div>
+    <div>
+        <div>США объявляют о своем нейтралитете.</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-05</p>
+    </div>
+    <div>
+        <div>3-я и 4-я германские армии, нанося удары из Померании и Восточной Пруссии, соединились в районе Грудзёндза, отрезав польскую армию «Поморье»</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-06</p>
+    </div>
+    <div>
+        <div>Объявление Южно-Африканским Союзом войны Германии.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-07</p>
+    </div>
+    <div>
+        <div>Германские войска вышли на рубежи рек Пилица, Варта и Нарев, заняв Краков, Познань и Лодзь. Подавлена героическая оборона Вестерплатте
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-08</p>
+    </div>
+    <div>
+        <div>Началась оборона Варшавы
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Defenders_of_Warsaw_%281939%29.jpg/480px-Defenders_of_Warsaw_%281939%29.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-09</p>
+    </div>
+    <div>
+        <div>Польские армии «Познань» и «Поморье» нанесли удар во фланг 8-й армии вермахта. Началось многодневное сражение на реке Бзуре
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-10</p>
+    </div>
+    <div>
+        <div>Канада объявляет Германии войну.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-12</p>
+    </div>
+    <div>
+        <div>Первое заседание верховного совета союзников в Абвиле.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-13</p>
+    </div>
+    <div>
+        <div>Началось наступление японских войск в Китае (13 сентября — 15 октября) .
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-15</p>
+    </div>
+    <div>
+        <div>Варшава отклоняет немецкий ультиматум о капитуляции.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-15</p>
+    </div>
+    <div>
+        <div>Подписание соглашения между СССР, МНР и Японией о прекращении военных действий в районе реки Халхин-Гол.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Khalkhin_Gol_Soviet_tanks_1939.jpg/480px-Khalkhin_Gol_Soviet_tanks_1939.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-17</p>
+    </div>
+    <div>
+        <div>Начало Польского похода Красной армии.</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-19</p>
+    </div>
+    <div>
+        <div>Окончание операций немецких войск в Польше.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-22</p>
+    </div>
+    <div>
+        <div>Совместный парад вермахта и РККА в Бресте
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Bundesarchiv_Bild_101I-121-0011A-23%2C_Polen%2C_Siegesparade%2C_Guderian%2C_Kriwoschein.jpg/480px-Bundesarchiv_Bild_101I-121-0011A-23%2C_Polen%2C_Siegesparade%2C_Guderian%2C_Kriwoschein.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-25</p>
+    </div>
+    <div>
+        <div>Визит министра иностранных дел Турции Ш. Сараджоглу в Советский Союз (25 сентября — 18 октября).</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-26</p>
+    </div>
+    <div>
+        <div>Запрет французским правительством Французской коммунистической партии.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-09-28</p>
+    </div>
+    <div>
+        <div>Падение Варшавы. Заключение в Москве договора о дружбе и границе между СССР и Германией. Заключение советско-эстонского пакта о взаимной помощи. СССР получает опорные пункты в Эстонской Республике</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-10-03</p>
+    </div>
+    <div>
+        <div>Отвод французских войск на линию Мажино.</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-10-03</p>
+    </div>
+    <div>
+        <div>Решение панамериканской конференции об установлении 300-мильной морской зоны безопасности вдоль побережья Американского континента южнее Канады (Панамская декларация).
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-10-05</p>
+    </div>
+    <div>
+        <div>Советско-латвийский пакт о взаимной помощи с предоставлением военных баз Советскому Союзу. Советский Союз предлагает Финляндии начать переговоры.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-10-06</p>
+    </div>
+    <div>
+        <div>Речь Гитлера в рейхстаге с предложением мира западным державам.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-10-09</p>
+    </div>
+    <div>
+        <div>Принята Директива № 6 германского верховного главнокомандования о подготовке нападения на Францию.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-10-10</p>
+    </div>
+    <div>
+        <div>Советско-литовский пакт о взаимной помощи с предоставлением военных баз Советскому Союзу.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-10-12</p>
+    </div>
+    <div>
+        <div>Предложение Советского правительства правительству Финляндии заключить договор о взаимной помощи.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-10-16</p>
+    </div>
+    <div>
+        <div>Учреждение Президиумом Верховного Совета СССР медали «Золотая Звезда» — знака отличия Героя Советского Союза.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-10-19</p>
+    </div>
+    <div>
+        <div>Подписание в Анкаре англо-франко-турецкого договора о взаимной помощи.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-10-19</p>
+    </div>
+    <div>
+        <div>Директива германского главного командования сухопутных войск по стратегическому сосредоточению и развертыванию сил для проведения операции на Западе (операция «Гельб»).
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-10-28</p>
+    </div>
+    <div>
+        <div>Антифашистские демонстрации в Праге, Брно, Остраве, Кладно и других городах Чехословакии в честь 21-й годовщины Чехословацкой республики.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-11-01</p>
+    </div>
+    <div>
+        <div>Пятая сессия Верховного Совета СССР. Принятие Западной Украины и Западной Белоруссии в состав Союза Советских Социалистических Республик и воссоединение их с Украинской и Белорусской ССР. (1-2 ноября)</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-11-03</p>
+    </div>
+    <div>
+        <div>США отменяют запрет на вывоз оружия.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-11-04</p>
+    </div>
+    <div>
+        <div>Принятие конгрессом США поправки к закону о нейтралитете, допускающей продажу воюющим странам оружия и военных материалов.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-11-11</p>
+    </div>
+    <div>
+        <div>Визит в Лондон премьер-министров доминионов Великобритании для координации военных усилий империи.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-11-13</p>
+    </div>
+    <div>
+        <div>Прекращение советско-финских переговоров.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-11-17</p>
+    </div>
+    <div>
+        <div>Утверждение верховным советом союзников плана «Диль».
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-11-20</p>
+    </div>
+    <div>
+        <div>Директива Политического управления Красной Армии о воспитательной работе и политических занятиях с красноармейцами и младшими командирами в 1939/40 учебном году.
+
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-11-26</p>
+    </div>
+    <div>
+        <div>Советский Союз обвиняет Финляндию в артиллерийском обстреле группы военнослужащих на советской территории
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-11-28</p>
+    </div>
+    <div>
+        <div>Советский Союз разрывает пакт о ненападении с Финляндией
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Soviet-finnish-nonaggression-pact-1932.jpg/480px-Soviet-finnish-nonaggression-pact-1932.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-11-29</p>
+    </div>
+    <div>
+        <div>Советский Союз разрывает дипломатические отношения с Финляндией.
+
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-11-30</p>
+    </div>
+    <div>
+        <div>войска СССР перешли границу, Финский президент провозглашает состояние войны с Советским Союзом. Начинается советско-финская война (30 ноября 1939 — 12 марта 1940)
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Red_Army_Finnish_flag_Winter_War.png/480px-Red_Army_Finnish_flag_Winter_War.png></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-12-2</p>
+    </div>
+    <div>
+        <div>Объявление правительством США «морального эмбарго» на торговлю с Советским Союзом.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-12-12</p>
+    </div>
+    <div>
+        <div>Наступление гоминьдановских войск против освобожденных районов провинции Шаньси (декабрь 1939 — март 1940).</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-12-13</p>
+    </div>
+    <div>
+        <div>Морской бой у залива Ла-Плата в южной части Атлантического океана между «Графом Шпее» и тремя английскими крейсерами.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Admiral_Graf_Spee_Flames.jpg/480px-Admiral_Graf_Spee_Flames.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-12-14</p>
+    </div>
+    <div>
+        <div>Лига Наций объявляет СССР агрессором и принимает решение о его исключении.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1939-12-18</p>
+    </div>
+    <div>
+        <div>Потопление корабля «Граф Шпее» в устье реки Ла-Плата.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Admiral_Graf_Spee_Flames.jpg/480px-Admiral_Graf_Spee_Flames.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-02-16</p>
+    </div>
+    <div>
+        <div>Английские военные корабли захватывают у норвежского побережья немецкое судно «Альтмарк».
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Altmark_Incident.jpg/480px-Altmark_Incident.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-03-12</p>
+    </div>
+    <div>
+        <div>Заключение мира между Финляндией и Советским Союзом.</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-03-21</p>
+    </div>
+    <div>
+        <div>Отставка французского правительства Даладье. Рейно становится премьер-министром.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Paul_Reynaud_1940.jpg/342px-Paul_Reynaud_1940.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-04-08</p>
+    </div>
+    <div>
+        <div>Великобритания минирует норвежские территориальные воды.</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-04-09</p>
+    </div>
+    <div>
+        <div>Немецкие войска занимают Данию и высаживаются в Норвегии.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/HMS_Warspite%2C_Norway_1940.jpg/480px-HMS_Warspite%2C_Norway_1940.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-04-13</p>
+    </div>
+    <div>
+        <div>Войска западных держав высаживаются в Ондальснесе.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Lockheed_Hudson_-_Royal_Air_Force-_1939-1945-_Coastal_Command_CH41.jpg/480px-Lockheed_Hudson_-_Royal_Air_Force-_1939-1945-_Coastal_Command_CH41.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-04-14</p>
+    </div>
+    <div>
+        <div>Войска западных держав высаживаются в Намсусе.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-05-02</p>
+    </div>
+    <div>
+        <div>Войска западных держав заканчивают эвакуацию Намсуса и Ондальснеса.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-05-10</p>
+    </div>
+    <div>
+        <div>Начало Западной кампании против Франции, Бельгии и Голландии.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Bundesarchiv_Bild_146-1988-072-14%2C_Belgien%2C_Einmarsch%2C_Radfahrschwadron.jpg/344px-Bundesarchiv_Bild_146-1988-072-14%2C_Belgien%2C_Einmarsch%2C_Radfahrschwadron.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-05-13</p>
+    </div>
+    <div>
+        <div>Прорыв немцев на реке Маас между Намюром и Седаном.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-05-14</p>
+    </div>
+    <div>
+        <div>Капитуляция голландской армии.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Rotterdam%2C_Laurenskerk%2C_na_bombardement_van_mei_1940.jpg/480px-Rotterdam%2C_Laurenskerk%2C_na_bombardement_van_mei_1940.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-05-17</p>
+    </div>
+    <div>
+        <div>Преобразование французского правительства. Петен Филипп становится заместителем председателя Совета Министров.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pétain_-_portrait_photographique.jpg/350px-Pétain_-_portrait_photographique.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-05-24</p>
+    </div>
+    <div>
+        <div>Западные державы решают прекратить боевые действия в районе Нарвика.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-05-27</p>
+    </div>
+    <div>
+        <div>Капитуляция бельгийской армии. Начало эвакуации английских войск из Дюнкерка.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-04</p>
+    </div>
+    <div>
+        <div>Окончание эвакуации английских войск из Дюнкерка.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-05</p>
+    </div>
+    <div>
+        <div>Начало битвы за Францию.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-08</p>
+    </div>
+    <div>
+        <div>Окончание эвакуации Нарвика западными державами. Норвегия прекращает борьбу.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/2/2c/Norwegian_Army_7.5_cm_field_gun.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-10</p>
+    </div>
+    <div>
+        <div>Италия объявляет войну Франции и Великобритании и начинает наступление.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-14</p>
+    </div>
+    <div>
+        <div>Занятие Парижа немецкими войсками.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-15</p>
+    </div>
+    <div>
+        <div>Прорыв линии Мажино. Дополнительный контингент советских войск вводится в Литву
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-16</p>
+    </div>
+    <div>
+        <div>Отставка правительства Рейно. Петен становится председателем Совета Министров.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-17</p>
+    </div>
+    <div>
+        <div>Просьба французского правительства о перемирии. Дополнительные контингенты советских войск вводится в Латвию и Эстонию
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-18</p>
+    </div>
+    <div>
+        <div>Адольф Гитлер и Бенито Муссолини встречаются в Бреннере.
+<img  src=https://regnum.ru/uploads/pictures/news/2019/06/01/regnum_picture_1559337009290481_normal.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-21</p>
+    </div>
+    <div>
+        <div>Переговоры о перемирии в Компьене(21 - 22 июня)
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Bundesarchiv_Bild_146-1982-089-18%2C_Waffenstillstand_von_Compiègne%2C_Unterhändler.jpg/480px-Bundesarchiv_Bild_146-1982-089-18%2C_Waffenstillstand_von_Compiègne%2C_Unterhändler.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-23</p>
+    </div>
+    <div>
+        <div>Переговоры о перемирии в Риме(23 - 24 июня)
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-25</p>
+    </div>
+    <div>
+        <div>Начало перемирия во Франции.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-26</p>
+    </div>
+    <div>
+        <div>Советский Союз ультимативно требует передачи Румынией Бессарабии и Северной Буковины.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-06-28</p>
+    </div>
+    <div>
+        <div>Части Красной Армии вступают в Бессарабию и Северную Буковину.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-07-03</p>
+    </div>
+    <div>
+        <div>Английское нападение на французский флот в Мерс-эль-Кебире.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Croiseur_de_bataille_Strasbourg_03-07-1940.jpg/480px-Croiseur_de_bataille_Strasbourg_03-07-1940.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-07-10</p>
+    </div>
+    <div>
+        <div>начало битвы за Британию
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-08-07</p>
+    </div>
+    <div>
+        <div>Нападение итальянских войск на Британское Сомали.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-08-22</p>
+    </div>
+    <div>
+        <div>битва за Бессарабию
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-08-30</p>
+    </div>
+    <div>
+        <div>Венский арбитраж государств оси по поводу нового начертания венгерско-румынской границы.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/TelekiCsakySegundoArbitrajeDeViena.jpeg/480px-TelekiCsakySegundoArbitrajeDeViena.jpeg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-09-06</p>
+    </div>
+    <div>
+        <div>Отречение от престола румынского короля Кароля II.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Carol_al_II-lea.jpg/356px-Carol_al_II-lea.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-09-07</p>
+    </div>
+    <div>
+        <div>Подписан Крайовский мирный договор, Румыния уступает Южную Добруджу Болгарии.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-09-13</p>
+    </div>
+    <div>
+        <div>Продвижение итальянских войск в Египте до Сиди-Баррани.
+https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egypt_Sept_1940.jpg/480px-Egypt_Sept_1940.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-09-23</p>
+    </div>
+    <div>
+        <div>Сенегальская операция (23 - 25 сентября)
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Dakar_Operations._September_1940%2C_on_Board_Ss_Westernland%2C_during_Voyage._A1475.jpg/480px-Dakar_Operations._September_1940%2C_on_Board_Ss_Westernland%2C_during_Voyage._A1475.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-09-27</p>
+    </div>
+    <div>
+        <div>Подписание трехстороннего пакта Германией, Италией и Японией в Берлине.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-10-07</p>
+    </div>
+    <div>
+        <div>Начало переброски немецких войск в Румынию.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-10-23</p>
+    </div>
+    <div>
+        <div>Встреча Гитлера и Франко в Андай.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Francisco_Franco_1950_%28cropped%29.jpg/361px-Francisco_Franco_1950_%28cropped%29.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-10-24</p>
+    </div>
+    <div>
+        <div>Встреча Гитлера и Петена в Монтуаре.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-10-28</p>
+    </div>
+    <div>
+        <div>Нападение Италии на Грецию. Встреча Гитлера и Муссолини во Флоренции.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Greek_Army_during_Primavera_Offensive_Klisura_March_1941.JPG/480px-Greek_Army_during_Primavera_Offensive_Klisura_March_1941.JPG></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-10-30</p>
+    </div>
+    <div>
+        <div>Конец битвы за Британию.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-11-04</p>
+    </div>
+    <div>
+        <div>Высадка английских войск на Крите.</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-11-05</p>
+    </div>
+    <div>
+        <div>Рузвельт в третий раз избирается президентом США.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-11-08</p>
+    </div>
+    <div>
+        <div>Сражение при Элеа-Каламас завершилось победой греческой армии, которая в секторе Эпира перенесла военные действия на территорию Албании.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-11-10</p>
+    </div>
+    <div>
+        <div>Смерть бывшего английского премьер министра Чемберлена.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-11-13</p>
+    </div>
+    <div>
+        <div>Налет английской авиации на итальянский флот в Таранто.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-11-13</p>
+    </div>
+    <div>
+        <div>Сражение на Пинде завершилось победой греческой армии, которая в секторе Западной Македонии перенесла военные действия на территорию Албании.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-11-18</p>
+    </div>
+    <div>
+        <div>Великобритания сдает в аренду Соединенным Штатам ряд баз на островах у восточного побережья Северной Америки.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-11-22</p>
+    </div>
+    <div>
+        <div>Сражение при Морова-Иван завершилось победой греческой армии, которая после этого заняла албанский город Корча.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-11-23</p>
+    </div>
+    <div>
+        <div>Румыния присоединяется к пакту трех держав.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-11-24</p>
+    </div>
+    <div>
+        <div>Словакия присоединяется к пакту трех держав
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-12-09</p>
+    </div>
+    <div>
+        <div>Наступление англичан против итальянцев в Северной Африке.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Italian_soldiers_taken_prisoner_during_Operation_Compass.jpg/480px-Italian_soldiers_taken_prisoner_during_Operation_Compass.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-12-18</p>
+    </div>
+    <div>
+        <div>Гитлером подписана «директива № 21» о подготовке к войне против Советского Союза.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Operation_Barbarossa_Infobox.jpg/402px-Operation_Barbarossa_Infobox.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1940-12-22</p>
+    </div>
+    <div>
+        <div>Сражение при Химаре завершилось победой греческой армии, которая продолжила продвижение вдоль побережья южной Албании.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-01-05</p>
+    </div>
+    <div>
+        <div>Капитуляция итальянского гарнизона Бардии в Ливии.</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-01-11</p>
+    </div>
+    <div>
+        <div>Занятие ущелья Клисура греческой армией, в результате чего была создана угроза стратегически важному для снабжения итальянской армии албанскому порту Влёра.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-01-19</p>
+    </div>
+    <div>
+        <div>Начало наступления англичан на Эритрею.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-01-22</p>
+    </div>
+    <div>
+        <div>Капитуляция английского гарнизона Тобрука в Ливии.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-01-24</p>
+    </div>
+    <div>
+        <div>Начало наступления англичан на Абиссинию.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-02-11</p>
+    </div>
+    <div>
+        <div>Высадка немецких войск в Триполи.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-02-12</p>
+    </div>
+    <div>
+        <div>Прибытие в Северную Африку генерала Роммеля.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-03-01</p>
+    </div>
+    <div>
+        <div>Присоединение Болгарии к пакту трех держав.</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-03-02</p>
+    </div>
+    <div>
+        <div>Немецкие войска вступают в Болгарию.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-03-16</p>
+    </div>
+    <div>
+        <div>Итальянское весеннее наступление в Албании отражено греческой армией, что подтвердило необходимость вмешательства Германии в итало-греческую войну.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-03-16</p>
+    </div>
+    <div>
+        <div>Англичане вновь овладевают Британским Сомали.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-03-25</p>
+    </div>
+    <div>
+        <div>Присоединение Югославии к пакту трех держав
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-03-27</p>
+    </div>
+    <div>
+        <div>Государственный переворот в Югославии. Гитлер отдает приказ о наступлении на Югославию и Грецию.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-03-27</p>
+    </div>
+    <div>
+        <div>Посещение Берлина японским министром иностранных дел Мацуока(27 - 29 марта)
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-03-31</p>
+    </div>
+    <div>
+        <div>Начало наступления немецкого Африканского корпуса на Тобрук.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-04-04</p>
+    </div>
+    <div>
+        <div>Англичане овладевают столицей Абиссинии Аддис-Абебой.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-04-05</p>
+    </div>
+    <div>
+        <div>Заключение пакта о ненападении между Югославией и Советским Союзом.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-04-06</p>
+    </div>
+    <div>
+        <div>Начало немецкого наступления на Югославию и Грецию.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-04-10</p>
+    </div>
+    <div>
+        <div>Советский Союз приводит в боевую готовность войска на западной границе.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-04-11</p>
+    </div>
+    <div>
+        <div>Окружение Тобрука немецким Африканским корпусом. Хорватия объявляет себя независимой.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-04-13</p>
+    </div>
+    <div>
+        <div>Немецкие войска овладевают Белградом. Подписание советско-японского пакта о ненападении в Москве.
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Matsuoka_signs_the_Soviet–Japanese_Neutrality_Pact-1.jpg/480px-Matsuoka_signs_the_Soviet–Japanese_Neutrality_Pact-1.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-04-18</p>
+    </div>
+    <div>
+        <div>Перемирие в Югославии.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-04-21</p>
+    </div>
+    <div>
+        <div>Перемирие между Германией и Грецией.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-04-23</p>
+    </div>
+    <div>
+        <div>Перемирие между Италией и Грецией.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-04-24</p>
+    </div>
+    <div>
+        <div>Эвакуация английских войск из Южной Греции (24 - 29 апреля)
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-04-27</p>
+    </div>
+    <div>
+        <div>Немецкие войска вступают в Афины.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-05-02</p>
+    </div>
+    <div>
+        <div>Ирак восстает против Великобритании и обращается к Германии за помощью.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-05-18</p>
+    </div>
+    <div>
+        <div>Италия заключает государственный договор с Хорватией.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-05-20</p>
+    </div>
+    <div>
+        <div>Высадка немцами воздушного десанта на Крите.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-05-24</p>
+    </div>
+    <div>
+        <div>Гибель английского линейного крейсера «Худ».
+<img  src=https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Bundesarchiv_Bild_146-1984-055-13%2C_Schlachtschiff_Bismarck%2C_Seegefecht.jpg/480px-Bundesarchiv_Bild_146-1984-055-13%2C_Schlachtschiff_Bismarck%2C_Seegefecht.jpg></div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-05-27</p>
+    </div>
+    <div>
+        <div>Гибель немецкого линкора «Бисмарк».
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-05-28</p>
+    </div>
+    <div>
+        <div>Англичане начинают эвакуацию Крита.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-06-01</p>
+    </div>
+    <div>
+        <div>Восстание в Ираке подавлено.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-06-14</p>
+    </div>
+    <div>
+        <div>Хорватия присоединяется к пакту трех держав.
+</div>
+    </div>
+</div><div class="row">
+    <div>
+        <p>1941-06-17</p>
+    </div>
+    <div>
+        <div>Начало мобилизации в Финляндии.</div>
+    </div>
+</div>
+    </div>
+</div>
+<label class="collapse_button_title" for="period1">Второй период(июнь 1941 - ноябрь 1942)</label>
+<input class="collapse_button period" type="checkbox" id="period1">
+<div class="collapsable" style="background: transparent;padding-left: 8px;
+  transition: max-height 0s ease;">
+    <div class="period_table">
+        
+    </div>
+</div>
+<label class="collapse_button_title" for="period2">Третий период(ноябрь 1942 - июнь 1944)</label>
+<input class="collapse_button period" type="checkbox" id="period2">
+<div class="collapsable" style="background: transparent;padding-left: 8px;
+  transition: max-height 0s ease;">
+    <div class="period_table">
+        
+    </div>
+</div>
+<label class="collapse_button_title" for="period3">Четвёртый период(июнь 1944 - май 1945)</label>
+<input class="collapse_button period" type="checkbox" id="period3">
+<div class="collapsable" style="background: transparent;padding-left: 8px;
+  transition: max-height 0s ease;">
+    <div class="period_table">
+        
+    </div>
+</div>
+<label class="collapse_button_title" for="period4">Пятый период(май 1945 - сентябрь 1945)</label>
+<input class="collapse_button period" type="checkbox" id="period4">
+<div class="collapsable" style="background: transparent;padding-left: 8px;
+  transition: max-height 0s ease;">
+    <div class="period_table">
+        
+    </div>
+</div>
+   
+
+</div>
+</body>
+<script>
+    (function () {
+      let coll = document.getElementsByClassName("collapse_button")
+      for (let i = 0; i < coll.length; i++) {
+        let collElement = coll[i];
+        let period = collElement.classList.contains("period");
+        if (period) {
+          function updElement() {
+            let next = collElement.nextElementSibling;
+            if (next.style.maxHeight != null && next.style.maxHeight.endsWith("px")) {
+              // let substring = next.style.maxHeight.substring(0,next.style.maxHeight.length-2);
+
+              if (next.style.maxHeight !== next.scrollHeight + "px") {
+
+                next.style.transitionDuration = "0s";
+                next.style.maxHeight = next.scrollHeight + "px";
+                next.height = next.scrollHeight + "px";
+                next.style.transitionDuration = "0.2s";
+              }
+            }
+            setTimeout(updElement)
+          }
+
+          updElement()
+        }
+        collElement.addEventListener("click", () => {
+          collElement.previousElementSibling.classList.toggle("active")
+          let next = collElement.nextElementSibling
+          if (period) {
+            next.style.transitionDuration = "0.2s";
+          }
+          if (next.style.maxHeight) {
+            next.style.maxHeight = null;
+          } else {
+            next.style.maxHeight = next.scrollHeight + "px";
+          }
+        })
+      }
+    })()
+</script>
+<script>
+    (function () {
+      let coll = document.querySelectorAll(".period_table > .row > div:first-child")
+      for (let collElement of coll) {
+        collElement.style.cursor="pointer"
+        collElement.addEventListener("click", () => {
+          let next = collElement.nextElementSibling
+          let next2=next.children[0]
+          // next2.classList.toggle("collapsed")
+          let offsetHeight = collElement.children[0].offsetHeight;
+          let myHeight = offsetHeight+"px";
+          if(next.scrollHeight<=offsetHeight+5){
+            next.style.height =myHeight;
+            next2.style.height =myHeight;
+            collElement.classList.add("active")
+            collElement.style.cursor=null
+            return
+          }
+          collElement.classList.toggle("active")
+          if (!collElement.classList.contains("active")) {
+            next.style.maxHeight = myHeight;
+            next2.style.maxHeight = myHeight;
+          } else {
+            if (next.scrollHeight >= offsetHeight) {
+              next.style.maxHeight = next.scrollHeight + "px";
+              next2.style.maxHeight = next2.scrollHeight + "px";
+            }
+
+          }
+        })
+      }
+      setTimeout(()=>{
+        let coll = document.querySelectorAll(".period_table > .row > div:first-child")
+        for (let collElement of coll) {
+          collElement.classList.toggle("active")
+          collElement.click()
+        }
+      })
+    })()
+</script>
+</html>
+
+
+
