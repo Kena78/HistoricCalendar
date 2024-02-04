@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -80,9 +79,6 @@ body {
   position: relative;
 }
 
-.period_table > .row > div:first-child {
-  vertical-align: top;
-}
 
 .row + .row {
   margin-top: 4px;
@@ -99,15 +95,6 @@ body {
   z-index: 3;
 }
 
-.period_table > .row > div:first-child > p {
-  width: 100%;
-  color: darkred;
-  padding: 4px;
-  border: 4px solid transparent;
-  margin: 0;
-  height: fit-content;
-  background: #f1f1f1;
-}
 
 .period_table > .row > div:first-child {
   flex: 1;
@@ -120,6 +107,7 @@ body {
   height: 100%;
   display: block;
   -webkit-background-clip: text; /* Применение фона к тексту */
+  transition: max-height 0.2s ease;
 }
 
 .period_table > .row > .active:first-child + div > * {
@@ -128,15 +116,31 @@ body {
   height: 100%;
   display: block;
   -webkit-background-clip: text; /* Применение фона к тексту */
+
 }
 
 .period_table > .row > div:last-child {
+
+  transition: max-height 0.2s ease;
   flex: 3;
   box-sizing: border-box;
   background: #73B6BC;
   color: white;
   overflow: hidden;
   height: max-content;
+}
+.period_table > .row > div:first-child {
+  vertical-align: top;
+  background: white;
+  transition: background-color 0.2s ease;
+}
+.period_table > .row > div:first-child > p {
+  width: 100%;
+  color: darkred;
+  padding: 4px;
+  border: 4px solid transparent;
+  margin: 0;
+  height: fit-content;
 }
 .period_table > .row > div:first-child:hover, .period_table > .row > .active:first-child{
   border-color: transparent;
@@ -1345,23 +1349,25 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egypt_Sept_1940.jpg/48
         })
       }
     })()
-</script>
-<script>
+  </script>
+  <script>
     (function () {
       let coll = document.querySelectorAll(".period_table > .row > div:first-child")
+      console.log(coll)
       for (let collElement of coll) {
-        collElement.style.cursor="pointer"
-        collElement.addEventListener("click", () => {
+        collElement.style.cursor = "pointer"
+        let listener = () => {
           let next = collElement.nextElementSibling
-          let next2=next.children[0]
+          let next2 = next.children[0]
           // next2.classList.toggle("collapsed")
           let offsetHeight = collElement.children[0].offsetHeight;
-          let myHeight = offsetHeight+"px";
-          if(next.scrollHeight<=offsetHeight+5){
-            next.style.height =myHeight;
-            next2.style.height =myHeight;
+          let myHeight = offsetHeight + "px";
+          let containsImg =  next.innerHTML.includes("<img");
+          if (next.scrollHeight <= offsetHeight + 5 && !containsImg) {
+            next.style.height = myHeight;
+            next2.style.height = myHeight;
             collElement.classList.add("active")
-            collElement.style.cursor=null
+            collElement.style.cursor = null
             return
           }
           collElement.classList.toggle("active")
@@ -1369,24 +1375,29 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egypt_Sept_1940.jpg/48
             next.style.maxHeight = myHeight;
             next2.style.maxHeight = myHeight;
           } else {
-            if (next.scrollHeight >= offsetHeight) {
+            if (next.scrollHeight > offsetHeight + 5 || containsImg) {
+              next.style.height = next2.style.height = null;
               next.style.maxHeight = next.scrollHeight + "px";
               next2.style.maxHeight = next2.scrollHeight + "px";
             }
 
           }
+        };
+        collElement.nextElementSibling.addEventListener("click",()=>{
+          if(!collElement.classList.contains("active")){
+            listener()
+          }
         })
+        collElement.addEventListener("click", listener)
       }
-      setTimeout(()=>{
+      setTimeout(() => {
         let coll = document.querySelectorAll(".period_table > .row > div:first-child")
+        console.log(coll)
         for (let collElement of coll) {
           collElement.classList.toggle("active")
           collElement.click()
         }
       })
     })()
-</script>
+  </script>
 </html>
-
-
-
