@@ -128,6 +128,7 @@ body {
   color: white;
   overflow: hidden;
   height: max-content;
+  padding: 4px;
 }
 .period_table > .row > div:first-child {
   vertical-align: top;
@@ -142,7 +143,10 @@ body {
   margin: 0;
   height: fit-content;
 }
-.period_table > .row > div:first-child:hover, .period_table > .row > .active:first-child{
+body.touch-mode{
+  font-size:1.5em;
+}
+body:not(.touch-mode) > div > div > .period_table > .row > div:first-child:hover, .period_table > .row > .active:first-child{
   border-color: transparent;
   background: #f1f1f1;
 }
@@ -1310,7 +1314,7 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egypt_Sept_1940.jpg/48
 
 </div>
 </body>
-<script>
+  <script>
     (function () {
       let coll = document.getElementsByClassName("collapse_button")
       for (let i = 0; i < coll.length; i++) {
@@ -1362,8 +1366,11 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egypt_Sept_1940.jpg/48
           // next2.classList.toggle("collapsed")
           let offsetHeight = collElement.children[0].offsetHeight;
           let myHeight = offsetHeight + "px";
-          let containsImg =  next.innerHTML.includes("<img");
-          if (next.scrollHeight <= offsetHeight + 5 && !containsImg) {
+          let containsImg = next.innerHTML.includes("<img");
+
+          let isExpandableSize = (next.scrollHeight > offsetHeight + 5);
+
+          if (!isExpandableSize && !containsImg) {
             next.style.height = myHeight;
             next2.style.height = myHeight;
             collElement.classList.add("active")
@@ -1375,7 +1382,7 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egypt_Sept_1940.jpg/48
             next.style.maxHeight = myHeight;
             next2.style.maxHeight = myHeight;
           } else {
-            if (next.scrollHeight > offsetHeight + 5 || containsImg) {
+            if (isExpandableSize || containsImg) {
               next.style.height = next2.style.height = null;
               next.style.maxHeight = next.scrollHeight + "px";
               next2.style.maxHeight = next2.scrollHeight + "px";
@@ -1383,8 +1390,8 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egypt_Sept_1940.jpg/48
 
           }
         };
-        collElement.nextElementSibling.addEventListener("click",()=>{
-          if(!collElement.classList.contains("active")){
+        collElement.nextElementSibling.addEventListener("click", () => {
+          if (!collElement.classList.contains("active")) {
             listener()
           }
         })
@@ -1392,12 +1399,45 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Egypt_Sept_1940.jpg/48
       }
       setTimeout(() => {
         let coll = document.querySelectorAll(".period_table > .row > div:first-child")
-        console.log(coll)
         for (let collElement of coll) {
           collElement.classList.toggle("active")
           collElement.click()
         }
       })
     })()
+  </script>
+  <script>
+      let isTouchDevice = function () {
+        return 'ontouchstart' in window || 'onmsgesturechange' in window;
+      };
+    setTimeout(() => {
+
+    })
+      // var isDesktop = window.screenX != 0 && !isTouchDevice();
+      if (isTouchDevice()) {
+        document.body.classList.add("touch-mode")
+      }
+  </script>
+  <script>
+    window.addEventListener('resize', function () {
+      resizeText();
+    });
+
+    function resizeText() {
+      var dynamicText = document.getElementsByClassName('main_header')[0];
+      var containerWidth = dynamicText.parentElement.clientWidth;
+      var textWidth = dynamicText.scrollWidth;
+
+      // Вычисляем желаемый размер шрифта
+      var desiredFontSize = (containerWidth / textWidth) * parseFloat(window.getComputedStyle(dynamicText).fontSize);
+
+      // Устанавливаем новый размер шрифта
+      dynamicText.style.fontSize = desiredFontSize + 'px';
+    }
+
+    // Вызываем функцию resizeText() при загрузке страницы
+    window.addEventListener('load', function () {
+      resizeText();
+    });
   </script>
 </html>
